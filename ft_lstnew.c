@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:29:46 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/12/16 13:54:28 by ncolliau         ###   ########.fr       */
+/*   Created: 2014/11/20 17:18:20 by ncolliau          #+#    #+#             */
+/*   Updated: 2014/11/22 10:59:45 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	i;
-	void	*cpy;
+	t_list	*new_list;
 
-	i = 0;
-	if (dst == NULL || src == NULL)
+	new_list = (t_list *)malloc(sizeof(t_list));
+	if (new_list == NULL)
 		return (NULL);
-	if ((cpy = malloc(len * sizeof(*src))) == NULL)
+	if (content == NULL)
+		content_size = 0;
+	if ((new_list->content = malloc(content_size)) == NULL)
 		return (NULL);
-	while (i != len)
-	{
-		*((char *)cpy + i) = *((char *)src + i);
-		i++;
-	}
-	i = 0;
-	while (i != len)
-	{
-		*((char *)dst + i) = *((char *)cpy + i);
-		i++;
-	}
-	free(cpy);
-	return (dst);
+	if (content == NULL)
+		new_list->content = NULL;
+	else
+		ft_memmove(new_list->content, content, content_size);
+	new_list->content_size = content_size;
+	new_list->next = NULL;
+	return (new_list);
 }

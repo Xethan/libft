@@ -6,12 +6,11 @@
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 10:08:37 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/11/16 11:20:56 by ncolliau         ###   ########.fr       */
+/*   Updated: 2014/12/29 17:45:05 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 int		n_letter(char const *s, int index, char c)
 {
@@ -53,7 +52,7 @@ char	**mallocation(char const *s, char c)
 	tab = malloc((n_word + 1) * sizeof(char *));
 	if (tab == NULL)
 		return (NULL);
-	tab[n_word] = '\0';
+	tab[n_word] = NULL;
 	while (n_word-- > 0)
 	{
 		tab[n_word] = malloc((n_letter(s, n_word + 1, c) + 1) * sizeof(char));

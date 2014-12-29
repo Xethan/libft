@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 17:33:52 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/12/04 16:51:52 by ncolliau         ###   ########.fr       */
+/*   Created: 2014/12/16 14:49:02 by ncolliau          #+#    #+#             */
+/*   Updated: 2014/12/17 10:30:00 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+size_t	ft_nbrlen(long long nbr)
 {
-	write(1, &c, 1);
+	size_t	length;
+
+	length = 0;
+	if (nbr == 0)
+		length = 1;
+	else
+	{
+		while (nbr != 0)
+		{
+			nbr /= 10;
+			length++;
+		}
+	}
+	return (length);
 }

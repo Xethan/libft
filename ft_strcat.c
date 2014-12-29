@@ -6,13 +6,11 @@
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 15:38:56 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/11/18 14:42:01 by ncolliau         ###   ########.fr       */
+/*   Updated: 2014/12/29 17:40:06 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 char	*ft_strcat(char *s1, const char *s2)
 {
@@ -22,6 +20,8 @@ char	*ft_strcat(char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	if ((ptr = ft_strdup(s2)) == NULL)
 		return (NULL);
 	while (s1[j])

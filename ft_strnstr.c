@@ -6,13 +6,11 @@
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:28:43 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/11/18 15:53:17 by ncolliau         ###   ########.fr       */
+/*   Updated: 2014/11/22 10:56:36 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
