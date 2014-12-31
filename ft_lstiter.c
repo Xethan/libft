@@ -6,7 +6,7 @@
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/29 19:11:53 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/12/29 20:02:14 by ncolliau         ###   ########.fr       */
+/*   Updated: 2014/12/31 10:23:17 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (!lst || !f)
+		return ;
 	while (lst)
 	{
 		f(lst);
