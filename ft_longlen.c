@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_longlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/31 12:41:43 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/12/31 12:43:06 by ncolliau         ###   ########.fr       */
+/*   Created: 2014/12/16 14:49:02 by ncolliau          #+#    #+#             */
+/*   Updated: 2014/12/31 12:40:54 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nbrlen(int n)
+size_t	ft_longlen(long long nbr)
 {
-	size_t	i;
+	size_t	length;
 
-	i = 0;
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
+	if (nbr == -9223372036854775807 - 1)
+		return (20);
+	length = 0;
+	if (nbr == 0)
+		length = 1;
+	else
 	{
-		i++;
-		n *= -1;
+		while (nbr != 0)
+		{
+			nbr /= 10;
+			length++;
+		}
 	}
-	if (n == 0)
-		i++;
-	while (n > 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
+	return (length);
 }
