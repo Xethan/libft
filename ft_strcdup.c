@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/31 12:41:43 by ncolliau          #+#    #+#             */
-/*   Updated: 2015/01/04 16:11:27 by ncolliau         ###   ########.fr       */
+/*   Created: 2015/01/08 16:57:21 by ncolliau          #+#    #+#             */
+/*   Updated: 2015/01/08 18:18:04 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nbrlen(int n)
+char	*ft_strcdup(const char *s, char c)
 {
-	size_t	i;
+	char	*cpy;
 
-	i = 0;
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		i++;
-		n *= -1;
-	}
-	if (n == 0)
-		i++;
-	while (n > 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
+	cpy = ft_strndup(s, ft_strclen(s, c));
+	return (cpy);
 }

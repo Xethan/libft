@@ -6,7 +6,7 @@
 /*   By: ncolliau <ncolliau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:55:11 by ncolliau          #+#    #+#             */
-/*   Updated: 2014/12/31 12:41:22 by ncolliau         ###   ########.fr       */
+/*   Updated: 2015/01/07 15:09:25 by ncolliau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str[i] = '\0';
 	if (n == -2147483648)
-		return ((str = "-2147483648"));
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		test = 1;
